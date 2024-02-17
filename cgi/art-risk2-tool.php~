@@ -1,0 +1,69 @@
+
+<?php
+
+	if (isset($_POST["miArray"])) { 
+   	$miArray = $_POST["miArray"]; // save $foo from POST made by HTTP request
+    	if(empty($miArray) || !is_array($miArray)){  
+    		// $miArray no es un Array o está vacío
+    		$salida="Error: vector parametros Art-Risk vacio o no es un Array"; 
+		} elseif (count($miArray)!= 17) {
+    		// $miArray no tiene 17 parámetros
+    		$salida="Error: el numero de parametros de Art-Risk debe ser 17"; 
+   	} else {
+   		$error = 0;
+			for ($i=0; $i<17; ++$i) {
+				if ( !($miArray[$i] == "G" || $miArray[$i] == "M" || $miArray[$i] == "B") ) {
+					// Alguno de los 17 parámetros de $miArray no contiene un dato válido 
+					$salida="Error: alguno de los 17 parametros de Art-Risk no es 'G', 'M' o 'B'"; 
+					$error = 1;
+					break;
+				}
+			}  
+   		if (!$error) {
+   			// No hay errores
+   			$input = "./art-risk2.bin";
+				for ($i=0; $i<17; ++$i) {
+					$input = $input." ".$miArray[$i];
+				}  
+			
+				$input = $input." 2>&1"; 	  		
+   			exec($input, $output, $status);
+   			$salida = "";
+   			foreach ($output as $line) {
+    				$salida = $salida." ".$line;
+   			}
+   		}		
+   	}
+   } else {
+    	$salida="Error: el parametro de entrada a Art-Risk no es un Array";    // exist but it's null
+   }
+   /**/
+   /**/
+	//echo "Salida: ".$salida." Status: ".$status; 
+	echo $salida; 
+	
+	exit ()   
+	
+	
+?>
+
+<!--
+	if (isset($_POST["miArray"])) { 
+   	$miArray = $_POST["miArray"]; // save $foo from POST made by HTTP request
+    	if(empty($miArray)){  
+    		$errMess="Vacio";    // exist but it's null
+   	} else {
+   		$errMess=$miArray.": Daniel";
+   	}
+   }
+	echo "Resultado: ".$errMess; 
+	exit ()   
+
+    -->
+ 
+ <!-- $miArray = $_POST['miArray']  -->
+	<!--
+	foreach($miArray as $msg){
+    	echo $msg;
+    	-->
+    	

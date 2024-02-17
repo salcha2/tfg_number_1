@@ -1,0 +1,49 @@
+
+<?php
+
+	$output = "FALLO";
+	$status = "FALLO";
+	/**/if (isset($_POST["miArray"])) { 
+   	$miArray = $_POST["miArray"]; // save $foo from POST made by HTTP request
+    	if(empty($miArray)){  
+    		$output="-2.0";    // exist but it's null
+    		$status="-2.0";
+   	} else {
+   		$input = "./ejemplo1.bin ".$miArray[0]." ".$miArray[1]." 2>&1";
+   		exec($input, $output, $status);
+   		//$output="Daniel";    // exist but it's null
+    		//$status="Cagigas";
+   	}
+   }
+   $salida = "";
+   foreach ($output as $line) {
+    $salida = $salida." ".$line;
+   }
+	echo "Salida: ".$salida." Status: ".$status; 
+	//exit ();   
+	/**/
+	//echo "Hola ".$output;
+	//exit ()
+	
+?>
+
+<!--
+	if (isset($_POST["miArray"])) { 
+   	$miArray = $_POST["miArray"]; // save $foo from POST made by HTTP request
+    	if(empty($miArray)){  
+    		$errMess="Vacio";    // exist but it's null
+   	} else {
+   		$errMess=$miArray.": Daniel";
+   	}
+   }
+	echo "Resultado: ".$errMess; 
+	exit ()   
+
+    -->
+ 
+ <!-- $miArray = $_POST['miArray']  -->
+	<!--
+	foreach($miArray as $msg){
+    	echo $msg;
+    	-->
+    	

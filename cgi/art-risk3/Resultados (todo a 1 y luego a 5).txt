@@ -1,0 +1,14 @@
+% vulnerabilidad
+% riesgo
+% funcionalidad
+
+ $ ./script_prueba_art-risk3_todo1
+22.79
+10.50
+83.04
+
+$ ./script_prueba_art-risk3_todo5
+92.80
+86.44
+11.02
+

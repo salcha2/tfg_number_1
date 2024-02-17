@@ -1,0 +1,4 @@
+http://dev.openlayers.org/examples/click-handler.html
+http://dev.openlayers.org/examples/click.html
+
+

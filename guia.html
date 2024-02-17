@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title title="Manual de Art-Risk">Guía - Art-Risk</title>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151025138-1"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  			function gtag(){dataLayer.push(arguments);}
+  			gtag('js', new Date());
+  		gtag('config', 'UA-151025138-1');
+	</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="lara" >
+
+	 <!-- Language menu -->
+	 <div  class="container">
+		<div  class="row col-lg-offset-11 col-md-offset-11 col-lg-1 col-md-1    col-sm-offset-11 col-xs-offset-9 col-sm-1 col-xs-1">
+				 <a class="language_label" href="manual_en.html"> English  </a>
+		</div>
+	</div> 
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/art-risk.css?v=1" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="brand">Art-Risk</div>
+    <div class="address-bar">Inteligencia artificial aplicada a la conservación preventiva de edificios patrimoniales</div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Art-Risk</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Inicio</a>
+                    </li>
+                    <li><a href="guia.html">Guia</a>
+                    </li>
+                    <li><a href="herramienta.html">Herramienta</a>
+                    </li>
+                    <li><a href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center"><strong>Guía de uso de la herramienta</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <!--
+                <div class="col-md-6">
+                    <img class="img-responsive img-border-left" src="img/slide-2.jpg" alt="">
+                </div>
+                -->
+                
+                
+<p>El modelo Art-Risk en su tercera versión proporciona tres resultados de salida:
+<p>
+1) Vulnerabilidad: valor comprendido entre 22.79 y 92.80. Donde el menor valor indica menor vulnerabilidad del edificio. <br>
+2) Riesgo: valor comprendido entre 10.50 y 86.44. Donde el menor valor indica menor riesgo para el edificio. <br>
+3) Índice de funcionalidad: valor comprendido entre 83.04 y 11.02. Donde el mayor valor indica mejor funcionalidad del edificio. <br>
+</p>
+</p>
+<p>De esta manera, si se dispone por ejemplo de varios edificios que
+hay que gestionar, las distintas valoraciones obtenidas permiten
+establecer un nivel de prioridades sobre cuál sería el primer o
+primeros edificios en el/ los cual/es habría que intervenir primero.</p>
+<p>La tercera versión de Art-Risk tiene 19 variables de entrada.
+Cinco de estas variables se asignan automáticamente a partir de la ubicación geográfica del edificio.
+El usuario debe introducir unas coordenadas geográficas válidas del edificio en formato WGS84 (EPSG:4326).
+Esto quiere decir que el usuario debe introducir los otros 14 valores de
+entrada restantes asociados al edificio que quiere valorar. 
+</p>
+
+<p>La descripción de todas y cada de unas variables, así como sus
+posibles valores se detallan a continuación. Si quiere consultar un manual de usuario más detallado de la herramienta,  <a href="files/Manual_Usuario_Español_ART-RISK_3.0.pdf">consulte este enlace</a>.</p>
+
+<br>
+
+<!-- --------------------------------------------------------------------------------------- -->
+
+
+
+<p class="western" align="center" style="margin-bottom: 0cm; line-height: 100%">
+<font size="4" style="font-size: 12pt"><b>LEYENDA DE LAS VARIABLES DE
+ENTRADA DEL MODELO ART-RISK 3</b></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR1
+- Geotecnia (Variable automática – Mapas SIG)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">(Según
+criterios del Mapa de condiciones para la edificación del IGME.)</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Muy favorable </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Favorable </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Aceptable </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Desfavorable</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Muy desfavorable</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR2
+- Entorno construido (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Completamente exento </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Exento ajardinado </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Entre medianeras simple </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Entre medianeras complejo </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Entre medianeras muy complejo</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR3
+- Sistema constructivo (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Sistema constructivo muy homogéneo </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Sistema constructivo homogéneo </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Sistema constructivo heterogéneo </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Sistema constructivo con entramados complejos </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Sistema constructivo con gran cantidad de entramados complejos</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR4
+- Modificación de la población (Variable manual – valoración por
+experto)</b></u></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Crecimientos mayores al 15% </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Variaciones entre el 0% y el 15% </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Variaciones entre el -5% y el 0% </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Descensos entre -10% y -5% </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Descensos de población por debajo del -10%</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR5
+- Valor patrimonial (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Muy alto, bajo normativa de protección</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Alto, edificio con edad superior a 100 años </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Media calidad constructiva </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Bajo, escasa calidad constructiva </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Muy bajo, sin ningún interés histórico artístico</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR6
+- Valor mueble (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Gran valor del mobiliario interior del edificio</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Bienes muebles de valor alto </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Bienes muebles de valor medio </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Bienes muebles de valor bajo </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Muy bajo valor del mobiliario interior del edificio</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR7
+- Ocupación (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Muy alta (edificio habitado todos los días)</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Alto nivel de actividades en el edificio </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Medio nivel de actividad en el edificio </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Bajo nivel de actividad en el edificio </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Edificio sin actividad</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR8
+- Mantenimiento</b></u></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+Plan de Mantenimiento, actividades programadas a corto/medio plazo y personal encargado</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+Plan de Mantenimiento, actividades programadas a medio/corto plazo, y no hay personal encargado</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+Plan de Mantenimiento, no hay actuaciones a corto/medio plazo, y no hay personal encargado</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+No hay plan de Mantenimiento, no hay actuaciones a corto/medio plazo y no hay personal encargado</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Edificio sin recursos para acciones de mantenimiento</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR9
+- Diseño de cubiertas (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Evacuación de aguas muy rápida</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Evacuación de aguas rápida</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Evacuación de aguas normal</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Evacuación de aguas lenta</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Evacuación de aguas compleja y lenta</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR10
+- Conservación (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Conservación óptima </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Conservación normal </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Necesita conservación </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Necesita una importante actuación de conservación </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Edificio en estado de abandono</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR11
+- Ventilación (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Existen ventilación natural cruzada y permanente en todos los espacios </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+Existe ventilación natural cruzada en algunos espacios</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+Existe ventilación natural cruzada en muy pocos espacios</font></font></font><font face="Arial, serif"></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">
+A veces existe ventilación natural cruzada cuando el edificio está en uso</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+No existe ventilación cruzada en ningún caso</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR12
+- Instalaciones (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Todas las instalaciones están conforme a norma y en funcionamiento </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Algunas
+instalaciones están conforme a norma y en funcionamiento</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Algunas
+instalaciones están conforme a norma y algunas están funcionando</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Nada
+está conforme a norma  pero algunas están funcionando</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Las
+instalaciones no están conforme a norma y nada está en
+funcionamiento</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR13
+- Riesgo de fuego (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Estructura incombustible y baja carga de fuego </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Estructura incombustible y media carga de fuego </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Estructura combustible y baja carga de fuego </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Estructura combustible y media carga de fuego </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Estructura combustible y alta carga de fuego</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR14
+- Sobrecargas de uso (Variable manual – valoración por experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Sobrecargas de uso son menores a las originales </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Sobrecargas de uso son igual a las originales </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Existen nuevas sobrecargas de uso a las originales </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0"><a name="_GoBack"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Nuevas Sobrecargas que originan un gran peso adicional </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Nuevas Sobrecargas de uso, por ejemplo espacios destinados a uso de
+almacén</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<br/>
+
+</p>
+
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR15
+– Modificaciones estructurales (Variable manual - valoración por
+experto)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">No
+se ha producido ninguna modificación</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Modificaciones
+simétricas y  equilibradas de pequeña entidad tendentes a reforzar
+la estructura original</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Modificaciones
+simétricas y equilibradas de gran entidad</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Modificaciones
+desordenadas de crecimiento orgánico</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+</font></font><font color="#000000"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Grandes
+modificaciones sin ningún tipo de orden</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR16
+- Precipitación media (Variable automática - Mapas SIG)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">(Precipitación
+media anual, datos de la Agencia española de meteorología). </font></font>
+</p>
+
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Precipitación menor a 600 mm/m<sup>2</sup> </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Precipitación entre 600 y 750 mm/m<sup>2</sup> </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Precipitación entre 750 y 1000 mm/m<sup>2</sup> </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Precipitación entre 1000 y 1200 mm/m<sup>2</sup> </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Precipitación mayor a 1200 mm/m<sup>2</sup> </font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR17
+- Erosión por lluvia (Variable automática - Mapas SIG)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">
+Obtenido de la instrucción de carreteras 5.2-IC. (MOPU 1990). <br/>
+(Se ha tenido en cuenta el coeficiente de intensidad de lluvia, relacionando la
+precipitación caída en una hora respecto a la caída durante 24
+horas)</font></p>
+
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Zonas de riesgo mínimo ( &lt; 7 )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Zonas de Riesgo bajo ( 7 - 8 )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Zonas de Riesgo medio ( 8 - 9 )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Zonas de Riesgo alto ( 9 - 10 )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Zonas de Riesgo máximo ( &gt; 10 )</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR18
+- Estrés térmico, variación de temperatura (Variable automática -
+Mapas SIG)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Diferencia menor a 6 grados centígrados </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Diferencia entre 6 y 7 grados centígrados </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Diferencia entre 7 y 8 grados centígrados </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Diferencia entre 8 y 10 grados centígrados </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Diferencia entre 10 y 12 grados centígrados </font></font>
+</p>
+
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR19
+- Heladas (Variable automática - Mapas SIG)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">(Días
+de heladas anuales, datos de la Agencia española de meteorología) </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Menos de 10 días con heladas al año </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Entre 10 y 20 días con heladas al año </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Entre 20 y 80 días con heladas al año </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Entre 80 y 125 días con heladas al año </font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Más de 125 días con heladas al año </font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR20
+- Riesgo por sismo (se valora de manera externa al modelo Art-Risk 3)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">(Valores
+de aceleración. Obtenido del Mapa de peligrosidad sísmica de la
+Norma sismo resistente NCSE-02)</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Zonas de riesgo mínimo ( &lt; 0.04 g ).</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Zonas de Riesgo bajo ( 0.04 g - 0.08 g )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Zonas de Riesgo medio ( 0.08 g - 0.12 g )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Zonas de Riesgo alto (0.12 g - 0.16 g)</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Zonas de Riesgo máximo ( &gt; 0.16 g )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">(Siendo
+g la aceleración de la gravedad)</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><u><b>AR21
+- Riesgo de Inundación (se valora de manera externa al modelo
+Art-Risk 3)</b></u></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">(Los
+valores se han definido en función del periodo de retorno de las
+inundaciones tanto en cauces fluviales como en ambiente costero)</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.
+Zonas de riesgo mínimo ( No inundables )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">2.
+Zonas de Riesgo bajo ( Periodo de retorno 500 años )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">3.
+Zonas de Riesgo medio ( Periodo de retorno 100 años )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">4.
+Zonas de Riesgo alto ( Periodo de retorno 50 años )</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 115%; orphans: 0; widows: 0">
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">5.
+Zonas de Riesgo máximo ( Periodo de retorno 10 años )</font></font></p>
+
+
+<br>
+<br>
+
+<!-- --------------------------------------------------------------------------------------- -->
+
+<p>Se recomienda que el usuario recopile previamente los valores para
+cada una las 14 variables "manuales" de entrada de cada edificio que se desee
+valorar, y posteriormente los introduzca en la <a href="herramienta.html">herramienta</a>. De esa
+manera podrá ir anotando los diferentes resultados o índices de
+funcionalidad obtenidos para cada edificio, y establecer así una
+primera guía sobre la toma de decisiones a adoptar.</p>
+<p>La interfaz web está adaptada para ser usada usada en dispositivos móviles con pantallas reducidas (tabletas y teléfonos móviles). 
+De esta manera se facilita que las evaluaciones de un edificio se pueden realizar sobre el terreno.</p>
+<p>Si quiere obtener más información sobre el modelo de
+Inteligencia Artificial en el cual está basada la herramienta o
+sobre el proyecto científico en general, visite por favor el sitio
+web oficial del <a href="http://www.upo.es/investiga/art-risk">proyecto Art-Risk</a>.</p>
+                
+                
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+
+    
+
+    <footer>
+        <div class="container ">
+    		   <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+    						<!-- CopyRight -->
+    						<!-- Información Legal -->
+    		         	 <p class=""> <?php echo date("Y"); ?> &copy; Universidad Pablo de Olavide y Universidad de Sevilla <a class="" data-toggle="modal" href="#myModalLegal">Información Legal</a>  
+								<a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2.0 Level Double-A Conformance">
+  								<img height="32" width="88" src="https://www.w3.org/WAI/wcag2AA-blue" alt="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0">
+								</a>    		         	     		         	 
+    		         	 </p> 
+                </div>
+            </div>       	
+  	
+        </div>
+         
+
+         <!-- Ventana Modal asociada a la información legal -->
+            
+            <div class="modal fade" id="myModalLegal" tabindex="-1" role="dialog">
+            	<!-- <div class="modal-dialog modal-lg" role="document"> -->
+            	<div class="modal-dialog modal-lg" role="document">
+               	<div class="modal-content">
+							<div class="modal-body legal_footer_text">
+								<h4> DERECHOS DE PROPIEDAD INDUSTRIAL E INTELECTUAL</h4>
+								<p>Tanto este sitio Web, como los contenidos y los signos distintivos aparecidos en el mismo, excepto indicación expresa en contrario, es propiedad del equipo de Art-Risk, de la Universidad Pablo de Olavide y de la Universidad de Sevilla, y se encuentran protegidos por los derechos de propiedad industrial e intelectual conforme a la legislación española e internacional. Por tanto, todos sus contenidos no podrán ser objeto de manipulación alguna (modificación, copia, alteración, reproducción, transmisión, adaptación, traducción, etc.) por parte del Usuario o de terceros, ya sea total o parcialmente sin la expresa autorización por parte del equipo de Art-Risk, la Universidad Pablo de Olavide y la Universidad de Sevilla, salvo que se indique lo contrario.</p>
+								<h4>ENLACES </h4>
+								<p> En esta Web se ofrece una selección de enlaces, directa o indirectamente, a recursos u otras Web de terceros, cuyo contenido puede variar, de forma muy rápida, por las características propias de Internet. La presencia de estos enlaces en el sitio Web tienen una finalidad informativa, no constituyendo en ningún caso una invitación a la contratación de productos o servicios que se ofrezcan en el sitio Web de destino. El equipo de Art-Risk no se hace en ningún caso responsable de las informaciones, servicios y contenido en general de dichas Web de terceros.</p>
+								<h4>EMPLEO DE COOKIES</h4>
+								<p>El equipo de Art-Risk podrá utilizar 'cookies' para personalizar y facilitar al máximo la navegación del usuario por su sitio web. Las 'cookies' se asocian únicamente a un usuario anónimo y su ordenador y no proporcionan referencias que permitan deducir datos personales del usuario. El usuario podrá configurar su navegador para que notifique y rechace la instalación de las 'cookies' enviadas por Art-Risk, sin que ello perjudique la posibilidad del usuario de acceder a los contenidos.</p>
+								<h4>CONDICIONES DE USO. EXENCIÓN DE RESPONSABILIDAD</h4>
+								<p>En esta Web se ofrece una selección de enlaces, directa o indirectamente, a recursos u otras Web de terceros, cuyo contenido puede variar, de forma muy rápida, por las características propias de Internet. La presencia de estos enlaces en el sitio Web tienen una finalidad informativa, no constituyendo en ningún caso una invitación a la contratación de productos o servicios que se ofrezcan en el sitio Web de destino. El equipo de Art-Risk no se hace en ningún caso responsable de las informaciones, servicios y contenido en general de dichas Web de terceros. Los autores se eximen de cualquier responsabilidad que pudiera derivarse del uso del software Art-Risk.</p>
+								<h4>TRATAMIENTO DE LOS DATOS DE CARÁCTER PERSONAL</h4>
+								<p>De conformidad a la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (LOPD), y demás normativa vigente, los datos de carácter personal suministrados, en su caso, por el Usuario quedarán incorporados a un fichero automatizado de la titularidad del equipo de investigación de Art-Risk, el cual será procesado exclusivamente para la finalidad descrita en el correspondiente formulario de recogida de datos.
+								Los datos de carácter personal serán tratados con el grado de protección adecuado, de acuerdo con el Real Decreto 1720/2007, de 21 de diciembre, y demás normativa de aplicación en cada momento, tomándose las medidas de seguridad necesarias para evitar su alteración, pérdida, tratamiento o acceso no autorizado por parte de terceros.
+								El equipo de Art-Risk se compromete a no ceder, comunicar ni compartir los datos personales que en su caso sean facilitados por el usuario en beneficio de terceros, salvo consentimiento del afectado. Los datos, en su caso, facilitados no serán utilizados con finalidades distintas a las que motivó su recogida y serán cancelados cuando dejen de ser necesarios a tal fin. El usuario puede acceder a la información del sitio Web sin necesidad de proporcionar ningún dato de carácter personal.
+								El Usuario podrá ejercitar sus derechos de oposición, acceso, rectificación y/o cancelación, en los términos establecidos en la normativa vigente, comunicándolo por escrito a la directora del proyecto Art-Risk, Dra. Maria Pilar Ortíz Calderón con dirección Edificio 22, planta 4, Despacho 6, Universidad Pablo de Olavide, Carretera de Utrera, 1, Sevilla-41013 , o vía correo electrónico a mportcal@upo.es indicando claramente el objeto de dicha comunicación.</p>
+								<h4>LEGISLACIÓN Y JURISDICCIÓN APLICABLE</h4>
+								<p>Las presentes Condiciones de Acceso quedan sujetas al ordenamiento jurídico español. Para la resolución de cualquier conflicto que pudiera derivarse del acceso a la página Web, el usuario y el equipo de Art-Risk, acuerdan someterse expresamente a los juzgados y tribunales de la ciudad de Sevilla (España), con renuncia a cualquier otro fuero general o especial. </p>
+							</div>
+                  	<div class="modal-footer footer_center">
+							 	<button id="button_cancel_legalmodal" type="button" class="btn btn-primary btn-info" data-dismiss="modal">Aceptar</button>
+                  	</div>
+                 	</div>
+
+               </div>
+           </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

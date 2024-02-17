@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title title="Art-Risk Tool">Art-Risk - Tool </title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151025138-1"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  			function gtag(){dataLayer.push(arguments);}
+  			gtag('js', new Date());
+  		gtag('config', 'UA-151025138-1');
+	</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Art-Risk tool for cultural heritage buildings evaluation">
+    <meta name="author" content="lara" >
+
+	 <!-- Language menu -->
+	 <div  class="container">
+		<div  class="row col-lg-offset-11 col-md-offset-11 col-lg-1 col-md-1    col-sm-offset-11 col-xs-offset-9 col-sm-1 col-xs-1">
+				 <a class="language_label" href="herramienta.html"> Español  </a>
+		</div>
+	</div> 
+	
+	
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/art-risk.css" type="text/css" rel="stylesheet">
+    <link href="ol_v5.2.0/ol.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="brand">Art-Risk</div>
+    <div class="address-bar">Artificial intelligence applied to the preventive conservation of heritage buildings</div>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Art-Risk</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index_en.html">Home</a>
+                    </li>
+                    <li><a href="manual_en.html">User Manual</a>
+                    </li>
+                    <li><a href="tool_en.html">Tool</a>
+                    </li>
+                    <li><a href="contact_en.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center"><strong>Tool</strong>
+                    </h2>
+                    <hr>
+                    <!-- <img class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt=""> -->
+                    <hr class="visible-xs">
+                    <p> If you have any questions about the use of the tool, please refer to section <a href="manual_en.html">User manual</a>. 
+                    For quick help on the meaning and values of each of the variables press the <img src="img/info-icon_30x30.png" alt="Imagen icono ayuda"> button with the information icon next to each input variable. 
+						  Below are the steps to be followed to obtain the vulnerability, risk and functional life indices of a building using the tool: <br> 						  
+						  </p>
+						  <p>
+						  1) Manually enter the building coordinates in the "Building Coordinates" section. 
+						  Alternatively, you can press the "Select Coordinates" button to search and click on the location of the building on a map of Spain. 
+						  The coordinates must be in WGS84 (EPSG:4326) format which is the default format used in "OpenStreetMaps" and "GoogleMaps".
+						  That is, the latitude and longitude coordinates must be expressed in decimal degrees.	<br>
+						  2) Once the coordinates have been entered by either method, click on the "Validate coordinates" button.
+						  If there have been no errors in the coordinates and a valid geographic location within Spain has been selected, the variables 1 and 16 to 21, will be automatically assigned to a value.
+						  These "automatic variables" cannot be edited or entered by the user manually. 	<br>
+						  3) Then you must manually enter the values for coordinates 2 to 15 inclusive. 
+						  The values for each variable must be between 1.0 and 5.0 inclusive. 	<br>
+						  4) Finally, once you have completed all the input values of the first 19 variables, you must press the "Send" button in the "Results" section. <br>
+						  </p>   
+						  <p>             
+						  If, once you have obtained the result, you have made a mistake or want to change the value of any of the variables, you can do so and press the "Send" button again. 
+                    You will see that the results or indexes obtained are automatically updated. The "Clear all" button resets all the variables and deletes the last results obtained. 
+                    Press it only when you have finished the evaluation of a building and you want to go on to evaluate another one.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+	<!-- ---------------- FORMULARIO DE ENTRADA DE VARIABLES ---------------- -->
+
+<div id="id_container" class="container">    
+            
+    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    
+    	<!-- --------- Selector de coordenadas del edificio --------- -->
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Coordinates of the building </div>    
+    			</div>
+    			<div class="panel-body" >
+
+					<!-- Latitud -->
+               <div class="form-group row ">
+               	
+               	<label for="latinput"  class="form_label col-md-6 col-lg-6 manual_variable_label"> Latitude </label>
+						<div class="controls col-md-6 col-lg-6">
+                  <input id="latinput" class="manual_variable_input" name="lat" type="text"  value="" title="Latitude">
+                  </div>
+               </div>
+
+					<!-- Longitud -->
+               <div class="form-group row ">
+               	<label for="loninput"  class="form_label col-md-6 col-lg-6 manual_variable_label"> Longitude </label>
+						<div class="controls col-md-6 col-lg-6">
+                       <input id="loninput" class="manual_variable_input" name="lon" type="text" value="" title="Longitude">
+                  </div>
+               </div>
+
+    			</div>
+ 
+    			<!-- ------ Coordinates message display ------ --> 
+    			<div class="form-group">
+        			<div class="col-xs-9 col-md-offset-1 col-lg-offset-1 col-md-8 col-lg-9">
+            		<div id="error_coordinates_messages"> </div>
+        			</div>
+    			</div>
+
+
+   			
+ 				<!-- Botón selector gráfico de coordenadas -->  
+ 				<div class="form-group row"> 
+            	<!-- <div class="aab controls col-md-4 "> </div> -->  
+              		<div class="col-lg-6 col-md-6 "> 	<!-- -->  	
+ 							<button type="button" class="button_coordinates btn btn-primary col-md-11 col-ld-11" data-toggle="modal" data-target="#myModal">
+                      	Select coordinates
+            			</button>
+            		</div>
+            		<div class="col-lg-6 col-md-6 "> 	<!-- -->  	
+            			<button type="button" class="button_coordinates btn btn-primary col-md-11 col-ld-11" id="validate_coordinates_button">
+                      	Validate coordinates
+            			</button>
+ 						</div> <!-- -->
+ 				</div>
+ 				<br>
+ 				<br>
+ 				
+ 				
+ 				<!-- Barra de progreso -->  
+ 				<div class="form-group row"> 
+        		<div class="progress  col-xs-offset-2 col-xs-8   col-sm-offset-2 col-sm-8   col-md-offset-2 col-md-8   col-lg-offset-2 col-lg-8">
+					<div id="progress-bar1" class="progress-bar progress_bar_art-risk" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> </div> 
+				</div> 	
+				</div>			
+ 
+			
+ 
+            <!-- Ventana Modal asociada al botón de selección de coordenadas -->
+            
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            	<div class="modal-dialog modal-lg" role="document">
+               	<div class="modal-content">
+                  	<div class="modal-header">
+                     	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        	<h5 class="modal-title text-center" id="myModalLabel">Click on the map to get the geographical coordinates</h5>
+                     </div>
+                     <!--  Mapa -->
+                     <div class="modal-body">
+                     	<div id="art-risk_map" class="map"></div>
+                     </div>
+                      <!--  Fin Mapa --> 
+                     <div class="row">
+								<div class="col-xs-offset-1 col-xs-5">
+									<label for="id_lat_modal" class="automatic_variable_label col-xs-3 col-md-3 col-lg-3"> Latitude:  </label>
+									<input name="latitud" id="id_lat_modal" class="automatic_variable_input" size = "20" maxlength = "20" type="text" value="" readonly > 
+								</div>
+								<div class="col-xs-offset-0 col-xs-6">
+									<label for="id_lon_modal" class="automatic_variable_label col-xs-3 col-md-3 col-lg-3"> Longitude:  </label>
+									<input name="longitud" id="id_lon_modal" class="automatic_variable_input" size = "20" maxlength = "20" type="text" value="" readonly > 
+								</div>                     
+                     </div>
+                     <div class="modal-footer footer_center">
+                     	<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button> -->
+                        <button id="button_accept_modal" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                         <button id="button_cancel_modal" type="button" class="btn btn-primary btn-info" data-dismiss="modal">Cancel</button>
+                     </div>
+                  </div>
+               </div>
+           </div>
+                                        
+				    			
+    			
+    		</div>
+    	<br>
+    	<br>
+    	
+    	<!-- ------------------------------------------ -->
+    	<!-- --------- Variables de Art-Risk3 --------- -->
+    	<!-- ------------------------------------------ -->
+    	
+      <!--    <form method="post" action=".">   -->
+      <input type='hidden' name='csrfmiddlewaretoken' value='XFe2r</fieldset>TYl9WOpV8U6X5CfbIuOZOELJ97S' >
+      <!-- <form  class="form-horizontal" method="post" onsubmit="return Press(this)" action="cgi/info.php">  -->
+      <!--  <form  class="form-horizontal" method="post" onsubmit="return Press(this)"> -->
+      <form  id="main_form" class="form-horizontal" onsubmit="event.preventDefault();" method="post">
+                    
+        <fieldset>             
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div ><legend class="panel-title">Input variables </legend></div>
+            </div>  
+            <div class="panel-body" >
+
+                    
+                                       
+                    <!-- ---------------- VARIABLES DE ENTRADA Y AUTOMÁTICAS (1 a 19) ---------------- -->
+                        
+    							<!-- 1 -->
+    							<div id="div_id_v1" class="form-group row">
+                            <label for="id_v1" class="form_label col-md-8 col-lg-8 automatic_variable_label"> 1. Geotechnics </label>
+                            <div class="controls col-md-4 col-lg-4">
+                            	<!-- -- <label id="id_v1" class="automatic_variable_input" size = "5" > example </label> <!-- -->
+                            	<!-- --> <input id="id_v1" class="automatic_variable_input" size = "5" maxlength = "5" type="text" value="" readonly title="Geotechnics"> <!-- -->
+										<button aria-label="Info" id="id_popover1" type="button" class="popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="1.Geotechnics" 
+													data-content="According to criteria of the Map of conditions for the construction of the Spanish IGME<br>
+																	  <b>1.0:</b> Very favourable <br> 
+																	  <b>2.0:</b> Favourable <br>
+																	  <b>3.0:</b> Acceptable <br>   										
+																	  <b>4.0:</b> Unfavourable <br>
+																	  <b>5.0:</b> Very Unfavourable <br>" >
+												  
+										</button> 
+                          	</div>
+                        </div> 
+                      
+                      
+   							<!-- 2 -->                      
+                        <div id="div_id_v2" class="form-group row">
+                            <label for="id_v2" class="form_label col-md-8 col-lg-8 manual_variable_label"> 2. Built environment </label>
+                            <div class="controls col-md-4 col-lg-4">
+                            	<input text="" id="id_v2" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Built environment" >
+ 										<button aria-label="Info" id="id_popover2" type="button" class="popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="2.Built environment" 
+ 													data-content="<b>1.0:</b> Completely exempt <br> 
+																	  <b>2.0:</b> Landscaping exempt <br>
+																	  <b>3.0:</b> Between simple partitions <br>   										
+																	  <b>4.0:</b> Between complex partitions <br>
+																	  <b>5.0:</b> Between walls very complex <br>">
+                           	</button>
+                           </div>
+                        </div>
+
+
+   							<!-- 3 -->
+                        <div id="div_id_v3" class="form-group row">
+                            <label for="id_v3" class="form_label col-md-8 col-lg-8 manual_variable_label"> 3. Construction system </label>
+                            <div class="controls col-md-4 col-lg-4">    
+                            	<input text=""  id="id_v3" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Construction system">                       
+ 										<button aria-label="Info" id="id_popover3" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="3.Construction system" 
+ 													data-content="<b>1.0:</b> Very homogeneous construction system <br> 
+																	  <b>2.0:</b> Homogeneous construction system <br>
+																	  <b>3.0:</b> Heterogeneous construction system <br>   										
+																	  <b>4.0:</b> Construction system with complex frameworks <br>
+																	  <b>5.0:</b> Construction system with a large number of complex structures <br>">								
+										</button>
+                             </div>                          
+                        </div>
+
+   							
+   							<!-- 4 -->
+                        <div id="div_id_v4" class="form-group row ">
+                            <label for="id_v4" class="form_label col-md-8 col-lg-8 manual_variable_label"> 4. Population change </label>
+                            <div class="controls col-md-4 col-lg-4">
+                            	<input text="" id="id_v4" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Population change" >    
+  										<button aria-label="Info" id="id_popover4" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="4.Population change" 
+  													data-content="<b>1.0:</b> Growth greater than 15% <br> 
+																	  <b>2.0:</b> Variations between 0% and 15%  <br>
+																	  <b>3.0:</b> Variations between -5% and 0% <br>   										
+																	  <b>4.0:</b> Decreases between -10% and -5%  <br>
+																	  <b>5.0:</b> Population decreases below -10% <br>">												
+										</button>                         
+                            </div>
+                        </div>
+
+								
+								<!-- 5 -->
+                        <div id="div_id_v5" class="form-group row ">
+                            <label for="id_v5" class="form_label col-md-8 col-lg-8 manual_variable_label"> 5. Asset value </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v5" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Asset value" >    
+  										<button aria-label="Info" id="id_popover5" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="5.Asset value" 
+  													data-content="<b>1.0:</b> Very high, under protection regulations <br> 
+																	  <b>2.0:</b> High, building over 100 years old <br>
+																	  <b>3.0:</b> Medium construction quality <br>   										
+																	  <b>4.0:</b> Low, poor building quality <br>
+																	  <b>5.0:</b> Very low, with no historical or artistic interest <br>">												                       					
+										</button>                         
+                           </div>
+                        </div>							
+
+
+								<!-- 6 -->
+                        <div id="div_id_v6" class="form-group row ">
+                            <label for="id_v6" class="form_label col-md-8 col-lg-8 manual_variable_label"> 6. Movable value </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v6" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Movable value" >    
+  										<button aria-label="Info" id="id_popover6" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="6.Movable value" 
+  													data-content="<b>1.0:</b> High value of the building's interior furnishings <br> 
+																	  <b>2.0:</b> High movable goods value <br>
+																	  <b>3.0:</b> Movable goods of average value <br>   										
+																	  <b>4.0:</b> Low-value movable goods <br>
+																	  <b>5.0:</b> Very low value of the building's interior furniture <br>">												
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 7 -->
+                        <div id="div_id_v7" class="form-group row ">
+                            <label for="id_v7" class="form_label col-md-8 col-lg-8 manual_variable_label"> 7. Occupation </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v7" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Occupation" >    
+  										<button aria-label="Info" id="id_popover7" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="7.Occupation" 
+  													data-content="<b>1.0:</b> Very high (inhabited building) <br> 
+																	  <b>2.0:</b> High level of activities inside the building <br>
+																	  <b>3.0:</b> Medium level of activities inside the building <br>   										
+																	  <b>4.0:</b> Low level of activities inside the building <br>
+																	  <b>5.0:</b> Building with no activity <br>">													
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 8 -->
+                        <div id="div_id_v8" class="form-group row ">
+                            <label for="id_v8" class="form_label col-md-8 col-lg-8 manual_variable_label"> 8. Maintenance </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v8" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Maintenance" >   
+  										<button aria-label="Info" id="id_popover8" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="8.Maintenance" 
+  													data-content="<b>1.0:</b> Maintenance plan, scheduled short/medium-term activities and staff in charge <br> 
+																	  <b>2.0:</b> Maintenance plan, scheduled activities in the medium/short term, no staff in charge <br>
+																	  <b>3.0:</b> Maintenance plan exists, no short/medium term actions and no staff in charge <br>   										
+																	  <b>4.0:</b> No Maintenance Plan, no short/medium term actions and no staff in charge <br>
+																	  <b>5.0:</b> Building without resources for maintenance actions <br>">												
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 9 -->
+                        <div id="div_id_v9" class="form-group row ">
+                            <label for="id_v9" class="form_label col-md-8 col-lg-8 manual_variable_label"> 9. Design of covers </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v9" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Cover design" >   
+  										<button aria-label="Info" id="id_popover9" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="9.Cover design" 
+  													data-content="<b>1.0:</b> Very fast water evacuation <br> 
+																	  <b>2.0:</b> Rapid water evacuation <br>
+																	  <b>3.0:</b> Normal water evacuation <br>   										
+																	  <b>4.0:</b> Slow water evacuation <br>
+																	  <b>5.0:</b> Complex and slow water evacuation <br>">												
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 10 -->
+                        <div id="div_id_v10" class="form-group row ">
+                            <label for="id_v10" class="form_label col-md-8 col-lg-8 manual_variable_label"> 10. Conservation  </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v10" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Ventilation" >   
+  										<button aria-label="Info" id="id_popover10" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="10.Ventilation" 
+  													data-content="<b>1.0:</b> Optimum conservation  <br> 
+																	  <b>2.0:</b> Normal conservation <br>
+																	  <b>3.0:</b> Needs conservation <br>   										
+																	  <b>4.0:</b> Needs significant conservation actions <br>
+																	  <b>5.0:</b> Building in a state of abandonment <br>">												
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 11 -->
+                        <div id="div_id_v11" class="form-group row ">
+                            <label for="id_v11" class="form_label col-md-8 col-lg-8 manual_variable_label"> 11. Ventilation  </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v11" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Ventilation" >   
+  										<button aria-label="Info" id="id_popover11" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="11.Ventilation" 
+  													data-content="<b>1.0:</b> There is permanent natural cross ventilation in all spaces <br> 
+																	  <b>2.0:</b> There is natural cross ventilation in some spaces <br>
+																	  <b>3.0:</b> There is natural cross ventilation in very few spaces <br>   										
+																	  <b>4.0:</b> Sometimes there is natural cross ventilation when the building is in use <br>
+																	  <b>5.0:</b> No cross ventilation under any circumstances <br>">												
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 12 -->
+                        <div id="div_id_v12" class="form-group row ">
+                            <label for="id_v12" class="form_label col-md-8 col-lg-8 manual_variable_label"> 12. Facilities </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v12" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Facilities" >   
+  										<button aria-label="Info" id="id_popover12" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="12.Facilities" 
+  													data-content="<b>1.0:</b> All installations are in accordance with standards and in operation <br> 
+																	  <b>2.0:</b> Some installations are compliant and in operation <br>
+																	  <b>3.0:</b> Some facilities are compliant and some are operating <br>   										
+																	  <b>4.0:</b> Nothing is up to standard but some are working <br>
+																	  <b>5.0:</b> The facilities are not up to standard and nothing is in operation <br>">												
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 13 -->
+                        <div id="div_id_v13" class="form-group row ">
+                            <label for="id_v13" class="form_label col-md-8 col-lg-8 manual_variable_label"> 13. Fire risk </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v13" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Fire risk" > 
+  										<button aria-label="Info" id="id_popover13" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="13.Fire risk" 
+  													data-content="<b>1.0:</b> Non-combustible structure and low fire load <br> 
+																	  <b>2.0:</b> Non-combustible structure and half fire load <br>
+																	  <b>3.0:</b> Combustible structure and low fire load <br>   										
+																	  <b>4.0:</b> Combustible structure and half fire load <br>
+																	  <b>5.0:</b> Combustible structure and high fire load <br>">												
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 14 -->
+                        <div id="div_id_v14" class="form-group row ">
+                            <label for="id_v14" class="form_label col-md-8 col-lg-8 manual_variable_label"> 14. Overloads </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v14" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Overloads" > 
+  										<button aria-label="Info" id="id_popover14" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="14.Overloads" 
+  													data-content="<b>1.0:</b> Usage overloads are less than the original <br> 
+																	  <b>2.0:</b> Usage overloads are the same as the original <br>
+																	  <b>3.0:</b> There are new usage overloads to the original <br>   										
+																	  <b>4.0:</b> New overloads that cause a great additional weight <br>
+																	  <b>5.0:</b> New usage overloads, e.g. spaces for warehouse use <br>">											
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 15 -->
+                        <div id="div_id_v15" class="form-group row ">
+                            <label for="id_v15" class="form_label col-md-8 col-lg-8 manual_variable_label"> 15. Structural changes </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v15" class="manual_variable_input" size = "5" maxlength = "5" type="text" value="" title="Structural changes" > 
+  									<button aria-label="Info" id="id_popover15" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="15.Structural changes" 
+  													data-content="<b>1.0:</b> No changes have been made <br> 
+																	  <b>2.0:</b> Small symmetrical and balanced modifications aimed at strengthening the original structure <br>
+																	  <b>3.0:</b> Symmetrical and balanced modifications of great entity <br>   										
+																	  <b>4.0:</b> Disorderly modifications of organic growth <br>
+																	  <b>5.0:</b> Big changes without any kind of order <br>">											
+						
+									</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 16 -->
+                        <div id="div_id_v16" class="form-group row ">
+                            <label for="id_v16" class="form_label col-md-8 col-lg-8 automatic_variable_label"> 16. Average Precipitation  </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v16" class="automatic_variable_input" size = "5" maxlength = "5" type="text" value="" readonly title="Average Precipitation" > 
+  										<button aria-label="Info" id="id_popover16" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="16.Average Precipitation" 
+  													data-content="<b>1.0:</b> Precipitation less than 600 mm/m<sup>2</sup> <br> 
+																	  <b>2.0:</b> Precipitation between 600 and 750 mm/m<sup>2</sup> <br>
+																	  <b>3.0:</b> Precipitation between 750 and 1000 mm/m<sup>2</sup> <br>   										
+																	  <b>4.0:</b> Precipitation between 1000 and 1200 mm/m<sup>2</sup> <br>
+																	  <b>5.0:</b> Precipitation greater than 1200 mm/m<sup>2</sup> <br>">										
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 17 -->
+                        <div id="div_id_v17" class="form-group row ">
+                            <label for="id_v17" class=" col-md-8 col-lg-8 automatic_variable_label"> 17. Rain erosion </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v17" class="automatic_variable_input" size = "5" maxlength = "5" type="text" value="" readonly title="Rain erosion" > 
+  										<button aria-label="Info" id="id_popover17" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="17.Rain erosion" 
+  													data-content="Obtained from the Spanish Road Instruction 5.2-IC. (MOPU 1990). 
+  																	  The rainfall intensity coefficient has been taken into account, relating the precipitation fallen in one hour with respect to the fall during 24 hours <br>
+  																	  <b>1.0:</b> Minimal risk areas ( < 7 ) <br> 
+																	  <b>2.0:</b> Low risk areas ( 7 - 8 ) <br>
+																	  <b>3.0:</b> Medium risk areas ( 8 - 9 ) <br>   										
+																	  <b>4.0:</b> High risk areas ( 9 - 10 ) <br>
+																	  <b>5.0:</b> Maximum risk zones ( > 10 ) <br>">													
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 18 -->
+                        <div id="div_id_v18" class="form-group row ">
+                            <label for="id_v18" class=" col-md-8 col-lg-8 automatic_variable_label"> 18. Thermal stress, temperature variation </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v18" class="automatic_variable_input" size = "5" maxlength = "5" type="text" value="" readonly title=" Thermal stress" > 
+  										<button aria-label="Info" id="id_popover18" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="18.Thermal stress, temperature variation" 
+  													data-content="<b>1.0:</b> Difference less than 6 Celsius degrees <br> 
+																	  <b>2.0:</b> Difference between 6 and 7 Celsius degrees <br>
+																	  <b>3.0:</b> Difference between 7 and 8 Celsius degrees <br>   										
+																	  <b>4.0:</b> Difference between 8 and 10 Celsius degrees <br>
+																	  <b>5.0:</b> Difference between 10 and 12 Celsius degrees <br>">													
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 19 -->
+                        <div id="div_id_v19" class="form-group row ">
+                            <label for="id_v19" class=" col-md-8 col-lg-8 automatic_variable_label"> 19. Frost </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v19" class="automatic_variable_input" size = "5" maxlength = "5" type="text" value="" readonly title="Frost" > 
+  										<button aria-label="Info" id="id_popover19" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="19.Frost" 
+  													data-content="<b>1.0:</b> Less than 10 frosty days a year <br> 
+																	  <b>2.0:</b> Between 10 and 20 frosty days a year <br>
+																	  <b>3.0:</b> Between 20 and 80 days with frost per year <br>   										
+																	  <b>4.0:</b> Between 80 and 125 days with frost per year <br>
+																	  <b>5.0:</b> More than 125 days of frost per year <br>">													
+										</button>                         
+                           </div>
+                        </div>
+
+
+							<!-- ---------------- VARIABLES INFORMATIVAS Y AUTOMÁTICAS (20 a 21) ---------------- -->	
+		</fieldset>
+
+		<fieldset>
+       <div class="panel panel-info">
+            <div class="panel-heading">
+                <div ><legend class="panel-title">Informative variables (do not fill in) </legend></div>    
+    			</div>
+    			<div class="panel-body" >
+
+								<!-- 20 -->
+                        <div id="div_id_v20" class="form-group row ">
+                            <label for="id_v20" class=" col-md-8 col-lg-8 automatic_variable_label"> 20. Earthquake risk </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v20" class="automatic_variable_input" size = "5" maxlength = "5" type="text" value="" readonly title="Earthquake risk" > 
+  										<button aria-label="Info" id="id_popover20" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="20.Earthquake risk" 
+  													data-content="
+  																	  Obtained from the Seismic Hazard Map of the NCSE-02 Seismic Resistance Standard. <br>
+  																	  <b>1.0:</b> Minimal risk areas ( < 0.04 g ) <br> 
+																	  <b>2.0:</b> Low risk areas ( 0.04 g - 0.08 g ) <br>
+																	  <b>3.0:</b> Medium risk areas ( 0.08 g - 0.12 g ) <br>   										
+																	  <b>4.0:</b> High risk areas (0.12 g - 0.16 g) <br>
+																	  <b>5.0:</b> Maximum risk zones ( > 0.16 g ) <br>">													
+										</button>                         
+                           </div>
+                        </div>
+
+
+								<!-- 21 -->
+                        <div id="div_id_v21" class="form-group row ">
+                            <label for="id_v21" class=" col-md-8 col-lg-8 automatic_variable_label"> 21. Flood risk  </label>
+                            <div class="controls col-md-4 col-lg-4">
+										<input text="" id="id_v21" class="automatic_variable_input" size = "5" maxlength = "5" type="text" value="" readonly title="Flood risk" > 
+  										<button aria-label="Info" id="id_popover21" type="button" class=" popoverButton btn btn-lg help-button" data-toggle="popover" data-placecement="right" title="21.Flood risk" 
+  													data-content="The values have been defined according to the return period of floods in both riverbeds and coastal environments. <br>
+  																	  <b>1.0:</b> Minimal risk areas (Not flooded) <br> 
+																	  <b>2.0:</b> Low risk areas (Return period of 500 years) <br>
+																	  <b>3.0:</b> Medium risk areas (Return period of 100 years) <br>   										
+																	  <b>4.0:</b> High risk areas (Return period of 50 years) <br>
+																	  <b>5.0:</b> Maximum risk zones (Return period of 10 years) <br>">													
+										</button>                         
+                           </div>
+                        </div>
+            </div>
+        </div>
+      </fieldset>
+    	<br>
+    	<br>        
+ 
+ 
+       
+       <!-- ------ Resultados y botones de envío  ------ --> 
+       <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Results </div>    
+    			</div>
+    			<div class="panel-body" >
+    			
+    						<!-- ------ Result Error display ------ --> 
+    						<div class="form-group">
+        						<div class="col-xs-9 col-md-offset-3 col-lg-offset-3 col-md-8 col-lg-9">
+            				<div id="error_messages"> </div>
+        						</div>
+    						</div>
+
+
+							<!-- ------ Result ------ --> 
+                     	<div class="form-group row ">
+                            <!--  <label for="id_result"  class="control-label col-md-6 col-lg-6"> RESULTADO: </label> -->
+                            <label for="result_vulnerability" class="control-label col-md-6 col-lg-6 manual_variable_label"> Vulnerability: </label>
+                            <div class="controls form_select col-md-2 col-lg-2">
+										<input text="" type="text" id="result_vulnerability" name="result_vulnerability" size ="10" value="" readonly title="Vulnerability" >
+									</div>
+								</div>
+
+                     	<div class="form-group row ">
+                            <label for="result_risk" class="control-label col-md-6 col-lg-6 manual_variable_label">  Risk: </label>
+                            <div class="controls form_select col-md-2 col-lg-2">
+										<input text="" type="text" id="result_risk" name="result_risk" size ="10" value="" readonly title="Risk" >
+									</div>
+								</div>
+
+                     	<div class="form-group row ">
+                            <label for="result_functionality" class="control-label col-md-6 col-lg-6 manual_variable_label">  Functionality Index: </label>
+                            <div class="controls form_select col-md-2 col-lg-2">
+										<input text="" type="text" id="result_functionality" name="result_functionality" size ="10" value="" readonly title="Functionality Index">
+									</div>
+								</div>
+
+							<!-- ------ Send and Clean Button ------ --> 
+                        <div class="form-group"> 
+                            <div class="aab controls col-md-4 "></div>
+                            <div class="controls col-md-8 ">
+                                <!-- --> <input type="submit" name="Signup" value="Send" class="btn btn-primary" id="submit-id-send" title="Enviar" > <!--  --> 
+													  <input type="submit" name="Clean" value="Clear All" style="margin-left: 10%" class="btn btn-primary btn btn-info" id="submit-id-clean" title="Limpiar" >                            
+                            </div>
+                        </div> 
+                        <!-- ----------------- -->    
+   			
+    			</div> 
+       </div> 
+       
+       
+       
+     </form>        
+        
+    </div> 
+</div>
+
+
+	<!-- -------------------------------------------------------------------- -->
+
+    <footer>
+
+                <div class="text-center">
+    						<!-- CopyRight -->
+    						<!-- Información Legal -->
+    		         	 <p class=""> <?php echo date("Y"); ?> &copy; Universidad Pablo de Olavide and Universidad de Sevilla  <a class="" data-toggle="modal" href="#myModalLegal">Legal Information</a> 
+								<a href="https://www.w3.org/WAI/WCAG2AA-Conformance" title="Explanation of WCAG 2.0 Level Double-A Conformance">
+  								<img height="32" width="88" src="https://www.w3.org/WAI/wcag2AA-blue" alt="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0">
+								</a>    		         	     		         	 
+    		         	 </p> 
+                </div>
+            <!-- </div>      	
+  	
+         </div> <!-- --> 
+         
+
+         <!-- Ventana Modal asociada a la información legal -->
+            
+            <div class="modal fade" id="myModalLegal" tabindex="-1" role="dialog">
+            	<!-- <div class="modal-dialog modal-lg" role="document"> -->
+            	<div class="modal-dialog modal-lg" role="document">
+               	<div class="modal-content">
+							<div class="modal-body legal_footer_text">
+								<h4> INDUSTRIAL AND INTELLECTUAL PROPERTY RIGHTS </h4>
+								<h6><p> This web site, as well as the contents and the distinctive signs appearing in it, unless otherwise expressly indicated, are property of the Art-Risk team, of the Pablo de Olavide University and of the University of Seville, and are protected by the industrial and intellectual property rights according to the Spanish and international legislation. Therefore, all its contents may not be manipulated in any way (modification, copy, alteration, reproduction, transmission, adaptation, translation, etc.) by the User or third parties, either totally or partially without the express authorisation of the Art-Risk team, the Universidad Pablo de Olavide and the University of Seville, unless otherwise indicated.</p></h6>
+								<h4>LINKS </h4>
+								<h6><p> This website offers a selection of links, directly or indirectly, to resources or other third party websites, whose content may vary very quickly due to the characteristics of the Internet. The presence of these links on the Web site is for information purposes only, and in no case do they constitute an invitation to contract the products or services offered on the destination Web site. The Art-Risk team is in no way responsible for the information, services and content in general of these third party websites.</p></h6>
+								<h4>COOKIES EMPLOYMENT</h4>
+								<h6><p> Art-Risk team may use 'cookies' to personalize and facilitate the user's navigation through its web site. 'Cookies' are only associated to an anonymous user and his computer and do not provide references that allow to deduce personal data of the user. The user will be able to configure his browser to notify and reject the installation of the 'cookies' sent by Art-Risk, without affecting the possibility of the user to access the contents.</p></h6>
+								<h4>CONDITIONS OF USE. DISCLAIMER OF LIABILITY</h4>
+								<h6><p> This website offers a selection of links, directly or indirectly, to resources or other third party websites, whose content may vary very quickly due to the characteristics of the Internet. The presence of these links on the Web site is for information purposes only, and in no case do they constitute an invitation to contract the products or services offered on the destination Web site. The Art-Risk team is in no way responsible for the information, services and content in general of such third party websites. The authors disclaim any liability that may arise from the use of Art-Risk software. </p></h6>
+								<h4>TREATMENT OF PERSONAL DATA</h4>
+								<h6><p> In accordance with Spanish Organic Law 15/1999, of 13th December 1999, on the Protection of Personal Data (LOPD), and other regulations in force, the personal data provided, where appropriate, by the User will be included in an automated file owned by the Art-Risk research team, which will be processed exclusively for the purpose described in the corresponding data collection form.
+								Personal data will be treated with the appropriate degree of protection, in accordance with Royal Decree 1720/2007 of 21 December and other applicable regulations at all times, taking the necessary security measures to prevent alteration, loss, or unauthorized access by third parties.
+								The Art-Risk team undertakes not to transfer, communicate or share the personal data provided by the user for the benefit of third parties, except with the consent of the affected party. The data, if any, provided will not be used for purposes other than those for which they were collected and will be cancelled when they are no longer necessary for this purpose. The user can access the information on the website without providing any personal data.
+								The user may exercise his or her rights of opposition, access, rectification and/or cancellation, under the terms established in the regulations in force, by writing to the director of the Art-Risk project, Dr Maria Pilar Ortíz Calderón at the address of Edificio 22, planta 4, Despacho 6, Universidad Pablo de Olavide, Carretera de Utrera, 1, Sevilla-41013 , or by e-mail to mportcal@upo.es clearly indicating the purpose of such communication.
+								</p></h6>
+								<h4>APPLICABLE LAW AND JURISDICTION</h4>
+								<h6><p> These Conditions of Access are subject to the Spanish legal system. For the resolution of any conflict that could be derived from the access to the web page, the user and the Art-Risk team, agree to submit expressly to the courts and tribunals of the city of Seville (Spain), renouncing to any other general or special jurisdiction. </p></h6>														
+							</div>
+                  	<div class="modal-footer footer_center">
+							 	<button id="button_cancel_legalmodal" type="button" class="btn btn-primary btn-info" data-dismiss="modal">Aceptar</button>
+                  	</div>
+                 	</div>
+
+               </div>
+           </div>
+    </footer>
+
+
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>  
+    <script type="text/javascript" src="js/art-risk-tool_en.js"></script> 
+	 <script type="text/javascript" src="ol_v5.2.0/ol.js"></script> 
+	 <script type="text/javascript" src="js/art-risk-map_en.js"></script>
+
+
+</body>
+
+</html>
