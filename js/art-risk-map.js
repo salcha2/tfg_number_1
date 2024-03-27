@@ -72,6 +72,8 @@ document.getElementById('validate_coordinates_button').onclick = function() {
 			coord_lat_lon[0] = lat;
 			coord_lat_lon[1] = lon;
 
+			console.log(coord_lat_lon);
+
 			$('#progress-bar1').show();
 			
 			// ENVIO DATOS UNA VEZ VERIFICADO NO HAY ERRORES:
