@@ -7,7 +7,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Obtener el hash de la contraseña desde la base de datos
-$query = "SELECT password FROM admin_users WHERE username='$username'";
+$query = "SELECT password FROM users WHERE username='$username'";
 $resultado = pg_query($conexion, $query);
 $registro = pg_fetch_assoc($resultado);
 

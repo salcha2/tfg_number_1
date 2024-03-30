@@ -59,13 +59,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             // Prepara la consulta SQL para insertar los datos en la tabla correspondiente
-            $stmt = $dbh->prepare("INSERT INTO datos4 
-                                    (result_vulnerability, result_risk, result_functionality, id_v1, id_v2, id_v3, id_v4, id_v5, id_v6, id_v7, id_v8, id_v9, id_v10, id_v11, id_v12, id_v13, id_v14, id_v15, id_v16, id_v17, id_v18, id_v19, id_v20, id_v21, coordenadas, usuario) 
-                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ST_SetSRID(ST_MakePoint(?, ?), 4326), ?)");
-            
-            // Ejecuta la consulta con los valores de los campos del formulario
-            $stmt->execute([$result_vulnerability, $result_risk, $result_functionality, $id_v1, $id_v2, $id_v3, $id_v4, $id_v5, $id_v6, $id_v7, $id_v8, $id_v9, $id_v10, $id_v11, $id_v12, $id_v13, $id_v14, $id_v15, $id_v16, $id_v17, $id_v18, $id_v19, $id_v20, $id_v21, $longitud, $latitud, $usuario]);
-            
+            // Prepara la consulta SQL para insertar los datos en la tabla correspondiente
+// Obtener el número de registros que ha hecho el usuario
+$stmt_count = $dbh->prepare("SELECT COUNT(*) FROM spots WHERE usuario = ?");
+$stmt_count->execute([$usuario]);
+$registro_usuario = $stmt_count->fetchColumn();
+
+// Construir el valor del slug
+$slug = $usuario . $registro_usuario;
+
+// Prepara la consulta SQL para insertar los datos en la tabla correspondiente
+$stmt = $dbh->prepare("INSERT INTO spots 
+                    (result_vulnerability, result_risk, result_functionality, id_v1, id_v2,id_v3,id_v4,id_v5,id_v6,id_v7,id_v8,id_v9,id_v10,id_v11,id_v12,id_v13,id_v14,id_v15,id_v16,id_v17,id_v18,id_v19,id_v20,id_v21, coordinates, usuario, slug) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,? )");
+
+// Concatena latitud y longitud con una coma entre ellas
+$coordinates = $latitud . ',' . $longitud;
+
+// Ejecuta la consulta con los valores de los campos del formulario
+$stmt->execute([$result_vulnerability, $result_risk, $result_functionality, $id_v1, $id_v2, $id_v3,$id_v4,$id_v5,$id_v6,$id_v7,$id_v8,$id_v9,$id_v10,$id_v11,$id_v12,$id_v13,$id_v14,$id_v15,$id_v16,$id_v17,$id_v18,$id_v19,$id_v20,$id_v21, $coordinates, $usuario, $slug]);
+          
             echo "Los datos se han insertado correctamente en la base de datos";
         } catch (PDOException $e) {
             // Si ocurre un error en la conexión o en la consulta, mostrar el mensaje de error
