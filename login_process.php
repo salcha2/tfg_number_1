@@ -20,7 +20,7 @@
         $_SESSION['usuario'] = $username;
 
         // Redirigir al usuario a la página deseada
-        header("Location: /art-risk3v4_09-02-2024_upo/hola.php");
+        header("Location: /art-risk3v4_09-02-2024_upo/index.php");
         exit; // Asegura que el script termine aquí para evitar cualquier salida adicional
     } else {
         // Credenciales incorrectas
